@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NekoTimer: Cat Timer & Calendar</title>
+    <meta name="description" content="A cute cartoon cat-themed productivity website featuring Pomodoro focus intervals, coin rewards every 10 minutes, interactive calendar, and a cat hat shop." />
+    <meta property="og:title" content="NekoTimer: Cat Timer & Calendar" />
+    <meta property="og:description" content="A cute cartoon cat-themed productivity website featuring Pomodoro focus intervals, coin rewards every 10 minutes, interactive calendar, and a cat hat shop." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#fb923c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="NekoTimer" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      // Gracefully filter benign Vite HMR websocket connection notifications in container preview
+      (function() {
+        const _origConsoleError = console.error;
+        console.error = function(...args) {
+          const first = args[0];
+          if (
+            (typeof first === 'string' && (
+              first === '[vite]' ||
+              first.startsWith('[vite]') ||
+              first.includes('failed to connect to websocket')
+            )) ||
+            (args.length > 1 && typeof first === 'string' && first.includes('[vite]'))
+          ) {
+            console.debug(...args);
+            return;
+          }
+          _origConsoleError.apply(console, args);
+        };
+      })();
+    </script>
+  </head>
+  <body class="bg-amber-50/50 text-stone-800 antialiased font-['Nunito',sans-serif] selection:bg-orange-200 selection:text-orange-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
